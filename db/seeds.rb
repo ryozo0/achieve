@@ -25,4 +25,6 @@ end
                password: password,
                password_confirmation: password,
                )
+               puts n
 end
+
