@@ -8,12 +8,11 @@
 
 
 100.times do |n|
-  b = Blog.create(
+   Blog.create(
       title: "あああ",
       content: "じ",
       user_id: n
       )
       n = n + 1
-      puts b
 end
 
