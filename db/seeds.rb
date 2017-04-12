@@ -7,11 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-n = 1
-while n <= 100
-  Blog.create(
-    title: "あああ",
-    user_id: n
-  )
-  n = n + 1
+100.times do |n|
+  b = Blog.create(
+      title: "あああ",
+      content: "じ",
+      user_id: n
+      )
+      n = n + 1
+      puts b
 end
+
