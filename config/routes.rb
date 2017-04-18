@@ -7,23 +7,25 @@ Rails.application.routes.draw do
       post:confirm
     end
   end
-    
-  
+
+
   resources :contacts, only: [:new, :create] do
     collection do
       post:confirm
     end
   end
-  
+
+  resources :poems, only: [:index, :show]
+
   if Rails.env.development?
       mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
-  
+
   root 'top#index'
-  
 
 
-  
+
+
   get 'blogs' => 'blogs#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
