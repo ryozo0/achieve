@@ -2,7 +2,9 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
-  has_many :blogs
+  has_many :blogs, dependent: :destroy
+
+  has_many :comments, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
@@ -49,13 +51,5 @@ class User < ActiveRecord::Base
     SecureRandom.uuid
   end
 
-  def update_with_password(params, *options)
-    if provider.blank?
-      super
-    else
-      params.delete :current_password
-      update_without_password(params, *options)
-    end
-  end
 
 end
