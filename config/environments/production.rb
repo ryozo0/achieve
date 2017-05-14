@@ -3,8 +3,8 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  
-  config.action_mailer.default_url_options = { host: 'https://arcane-cove-94179.herokuapp.com/' }
+
+  config.action_mailer.default_url_options = { host: '54.65.126.117' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
   {
